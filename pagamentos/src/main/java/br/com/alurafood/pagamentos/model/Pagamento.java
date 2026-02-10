@@ -44,9 +44,14 @@ public class Pagamento {
     @Size(min = 3, max = 3)
     private String codigo;
 
-
+    @NotNull
+    @Enumerated(EnumType.STRING)
     private Status status;
+
+    @NotNull
     private Long pedidoId;
+
+    @NotNull
     private Long formaDePagamentoId;
 
 }
