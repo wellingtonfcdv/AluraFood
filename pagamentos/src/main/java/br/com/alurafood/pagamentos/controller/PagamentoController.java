@@ -38,4 +38,10 @@ public class PagamentoController {
         URI endereco = uriBuilders.path("/pagamentos/{id}").buildAndExpand(pagamento.getId()).toUri();
         return ResponseEntity.created(endereco).body(pagamento);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable @NotNull Long id){
+        service.excluirPagamento(id);
+        return ResponseEntity.noContent().build();
+    }
 }
